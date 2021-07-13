@@ -7,7 +7,7 @@
 .header { /*initial background image*/
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(imgs/banner.png); /*Edição leve da imagem - https://www.w3schools.com/css/css3_gradients.asp*/
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(imgs/banner.png); /*image edit - https://www.w3schools.com/css/css3_gradients.asp*/
     background-position: center;
     background-size: cover;
     position: relative;
@@ -45,7 +45,7 @@ nav { /*first section*/
     background: #f44336;
     display: block;
     margin: auto;
-    transition: 0.5s;
+    transition: 0.5s; /*Always add transition on hover effects*/
 }
 
 .nav-links ul li:hover::after{ /*orange line effect*/
@@ -94,14 +94,228 @@ nav .fa { /*turns the fa icons invisible*/
     display: none;
 }
 
-@media(max-width: 700px){ /*responsive*/
+/*Course section*/
+
+.course {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row { /*use the same class name to edit different sections with the same class*/
+    margin-top: 5%;
+    display: flex; /*separate the elements horizontally*/
+    justify-content: space-between;
+}
+
+.course-col {
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.course-col:hover { /*shadow effect on hover*/
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/*Campus section*/
+
+.campus {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.campus-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.campus-col img {
+    width: 100%;
+    display: block; 
+}
+
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover {
+    background: rgba(226,0,0,0.7);
+}
+
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /*center the text on the image*/
+    position: absolute;
+    opacity: 0; /*hides the title*/
+    transition: 0.5s;
+}
+
+.layer:hover h3 {
+    bottom: 49%;
+    opacity: 1; /*makes the title appear*/
+}
+
+/*Facilities section*/
+
+.facilities {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.facilities-col {
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.facilities-col img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.facilities-col p {
+    padding: 0%;
+}
+
+.facilities-col h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*Testemonials section*/
+
+.testemonials {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.testemonial-col {
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+
+.testemonial-col img {
+    height: 60px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.testemonial-col p {
+    padding: 0;
+}
+
+.testemonial-col h3 {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.testemonial-col .fa {
+    color: #f44336;
+}
+
+/*CTA section*/
+
+.cta {
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(imgs/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}  
+
+.cta h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+/*Footer*/
+
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+
+}
+
+.footer h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa {
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+@media(max-width: 700px){ /*RESPONSIVE*/
     .text-box h1{
         font-size: 20px;
     }
     .nav-links ul li{
         display: block;
     }
-    .nav-links { /*barra lateral em telas de celular*/
+    .nav-links { /*sidebar on mobile screens*/
         position: absolute;
         background: #f44336;
         height: 100vh;
@@ -112,8 +326,8 @@ nav .fa { /*turns the fa icons invisible*/
         z-index: 2;
         transition: 1s;
     }
-    nav .fa { /*turns the fa icons visible in mobile screens*/
-        display: block;
+    nav .fa { 
+        display: block; /*turns the fa icons visible in mobile screens*/
         color: #fff;
         margin: 10px;
         font-size: 22px;
@@ -123,5 +337,76 @@ nav .fa { /*turns the fa icons invisible*/
     .nav-links ul {
         padding: 30px;
     }
+
+    /*Course section*/
+
+    .row {
+        flex-direction: column; /*separate the elements vertically*/
+    }
+
+    .testemonial-col img {
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+
+    /*CTA*/
+
+    .cta h1 {
+        font-size: 24px;
+    }
+
+    .red-btn {
+        margin-bottom: 25px;
+    }
+
+}
+
+/*ABOUT US PAGE*/
+
+.sub-header {
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(imgs/background.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.sub-header h1 {
+    margin-top: 90px;
+}
+
+.about-us {
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.about-col {
+    flex-basis: 48%;
+    padding-bottom: 30px 2px;
+}
+.about-col img {
+    width: 100%; /*changes the size*/
+}
+
+.about-col h1 {
+    padding-top: 0;
+}
+
+.about-col p {
+    padding: 15px 0 25px;
+}
+
+.red-btn {
+    border: 1px solid #f44336;
+    background:transparent;
+    color: #f44336;
+}
+
+.red-btn:hover {
+    color: #fff;
 }
 
